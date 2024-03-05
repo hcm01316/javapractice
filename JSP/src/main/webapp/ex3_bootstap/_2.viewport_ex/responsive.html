@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+body{
+background-color: lightgreen;
+}
+
+@media screen and (max-width: 600px) {
+body {
+	background-color: lightblue;
+	}
+}
+
+@media screen and (min-width: 601px) and  (max-width:900px) {
+body {
+	background-color: lightgray;
+}
+}
+</style>
+</head>
+<body>
+<p>브라우저 사이즈가 최대 600px 까지는 lightblue
+	601px ~ 900px까지는 lightgray 그 외는 lightgreen</p>
+<script>
+ window.onresize=function() {
+	 
+	 document.body.innerHTML = "window.innerWidth: " + window.innerWidth;
+	 
+ }
+</script>	
+</body>
+</html>
