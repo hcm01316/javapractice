@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" 
+xmlns="https://jakarta.ee/xml/ns/jakartaee" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee                       
+https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+
+<servlet>
+	<servlet-name>S_Test</servlet-name>
+	<servlet-class>_1.ServletTest</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>S_Test</servlet-name>
+	<url-pattern>/start</url-pattern>
+</servlet-mapping>
+
+    <context-param>
+	<description>로깅 여부 </description>
+	<param-name>logEnabled</param-name>
+	<param-value>true</param-value>
+	</context-param>
+	
+	<context-param>
+	<description>디버깅 레벨</description>
+	<param-name>debugLevel</param-name>
+	<param-value>5</param-value>
+	</context-param>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/ex3_implicit_object/_6.exception/error404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/ex3_implicit_object/_6.exception/error500.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.lang.NullPointerException</exception-type>
+		<location>/ex3_implicit_object/_6.exception/errorNullPointer.jsp</location>
+	</error-page>
+	
+	
+</web-app>
